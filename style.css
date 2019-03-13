@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c0d3d3;
+}
+
+
+/* ---------------------------- */
+/* ------- START SCREEN ------- */
+/* ---------------------------- */
+
+
+#introScreen {
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    z-index: 2;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://www.valcadia.com/mad_art/mad_bg_tn.jpg);
+    background-position: center;
+}
+
+#startBtn {
+    display: block;
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+    background-color: red;
+}
+
+
+.game-title {
+    position: relative;
+    top: 10%;
+    text-align: center;
+}
+
+.instructions {
+    position: relative;
+    top: 70%;
+    text-align: center;
+    background-color: gray;
+}
+
+/* ---------------------------- */
+/* ------- GAME SCREEN ------- */
+/* ---------------------------- */
+
+.game-screen {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+#wholeGame {
+    margin-top: 80px;
+    text-align: center;
+    height: 80vh;
+    width: 80vw;
+    margin: 100px auto 0 auto;
+    border-radius: 20px;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(http://i.imgur.com/zGeyfN1.jpg);
+}
+
+
+
+
+
+/* ---------------------------- */
+/* ------- PICK CHOICES ------- */
+/* ---------------------------- */
+
+.choices-container {
+    display: inline-block;
+    position: relative;
+    bottom: 20%;
+    width: 50%;
+    background-color: hsla(210, 14%, 64%, 0.29);
+    border-radius: 30px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: inline-block;
+    margin: 5%;
+    border-radius: 50%;
+}
+
+.rock {
+    background: url(http://pixelartmaker.com/art/384d668556ef0fc.png) no-repeat center;
+    background-size: contain;
+    background-color: red;
+    border-radius: 50%;
+
+}
+
+.paper {
+    background: url(http://pixelartmaker.com/art/80b778fe3e009c5.png) no-repeat center;
+    background-size: 60px;
+    background-color: red;
+}
+
+.scissors {
+    background: url(http://pixelartmaker.com/art/3aac856b665fd20.png) no-repeat center;
+    background-size: contain;
+    background-color: red;
+}
+
+
+/* ---------------------------- */
+/* ---- SINGLE ROUND RESULT ---- */
+/* ---------------------------- */
+
+
+#round-results {
+    border: 3px black solid;
+    width: 100%;
+    top: 200px;
+    position: relative;
+    height: 150px;
+    background-color: steelblue;
+    color: #ed970d;
+    vertical-align: middle;
+
+}
+
+#round-winnner {}
+
+#round-score {
+    line-height: -60px;
+}
+
+
+/* ---------------------------- */
+/* ------- FINAL RESULT ------- */
+/* ---------------------------- */
+
+
+#final-results {
+    display: none;
+}
+
+#final-winner {}
+
+#final-score {}
+
+#round-winner {
+
+        line-height: 90px;
+
+}
