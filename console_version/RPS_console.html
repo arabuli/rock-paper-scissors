@@ -1,0 +1,93 @@
+<html>
+<script>
+    let playerScore = 0;
+    let computerScore = 0;
+    let draws = 0;
+
+    function computerPlay() {
+        let random = Math.floor(Math.random() * 3) + 1;
+
+        switch (random) {
+            case 1:
+                random = 'rock';
+                break;
+            case 2:
+                random = 'paper';
+                break;
+            case 3:
+                random = 'scissors';
+                break;
+        }
+        return random;
+    }
+
+
+
+
+    function playRound(playerSelection, computerSelection) {
+        let playerChoiceCapitalized = playerSelection.charAt(0).toUpperCase() + playerSelection.substr(1)
+        let computerChoiceCapitalized = computerSelection.charAt(0).toUpperCase() + computerSelection.substr(1)
+        if (playerSelection == computerSelection) {
+            draws++;
+            return ("It's a Draw. " + playerChoiceCapitalized + " and " + computerChoiceCapitalized + " both have same strenght.");
+        } else if (playerSelection == "scissors" && computerSelection == 'paper' || playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock") {
+            playerScore++;
+            return ("Player wins! " + playerChoiceCapitalized + " beats " + computerChoiceCapitalized);
+        } else {
+            computerScore++;
+            return ("Computer wins! " + computerChoiceCapitalized + " beats " + playerChoiceCapitalized);
+        }
+
+    }
+
+
+function testRock() {
+    
+}
+
+
+    function gameRound() {
+        const computerSelection = computerPlay();
+        const playerSelection = prompt("Rock, Paper, Scissors").toLowerCase();
+        if (playerSelection == null) {
+            return;
+        } else {
+            if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
+                console.log(playRound(playerSelection, computerSelection));
+            } else {
+                console.log("რა " + playerSelection + " შიგ ხომ არ გაქვს. You have to enter Rock, Paper or Scissors");
+            }
+        }
+    }
+
+    function game() {
+        let roundCount = prompt("How many rounds do you want to play?", "2");
+        if (isNaN(roundCount)) {
+            alert("You have to enter a number");
+            game();
+        } else {
+            for (let i = 1; playerScore < roundCount && computerScore < roundCount; i++) {
+                gameRound();
+            }
+        }
+    }
+
+
+    function results() {
+        console.log("Computer Score: " + computerScore, " Player Score: " + playerScore, " Draws: " + draws);
+        if (computerScore > playerScore) {
+            console.log("You lose! Computer wins the game!");
+        } else if (computerScore == playerScore) {
+            console.log("Friendship has won");
+        } else {
+            console.log("You win the game! Computer loses!");
+        }
+    }
+
+    game();
+
+    results();
+    
+    </script>
+</html>
+
